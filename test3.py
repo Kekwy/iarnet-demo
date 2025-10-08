@@ -5,4 +5,5 @@ from actorc.controller.context import (
     ActorRuntime,
 )
 
+# context = ActorContext.createContext(ignis_address="localhost:50001", application_id="test3")
 context = ActorContext.createContext()
