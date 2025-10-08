@@ -61,7 +61,7 @@ def actorWorkflowExportFunc(dict: dict):
     for function in route.functions:
         route_dict[function.name] = function.handler
     for workflow in route.workflows:
-        route_dict[workflow.name] = workflow.handler
+        route_dict[workflow.name] = function.handler
         
     metadata = Metadata(
         id=str(uuid.uuid4()),
