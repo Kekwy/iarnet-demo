@@ -225,3 +225,4 @@ xkit==0.0.0
 xlib==0.21
 zipp==1.0.0
 zope.interface==5.4.0
+bitsandbytes==0.48.1
