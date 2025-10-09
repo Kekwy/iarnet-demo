@@ -22,7 +22,7 @@ import os
 from peft import LoraConfig, get_peft_model, prepare_model_for_kbit_training, PeftModel
 import gc
 
-context = ActorContext.createContext("localhost:8082")
+context = ActorContext.createContext()
 
 PROMPT = "你是一个医学专家，你需要根据用户的问题，给出带有思考的回答。"
 MAX_LENGTH = 600
