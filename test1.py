@@ -31,6 +31,11 @@ def hello_function(name: str):
     provider="actor",
     name="process_data",
     venv="test2",
+    resources= {
+        "cpu": 1,
+        "memory": "1024Mi",
+        "gpu": 0,
+    },
 )
 def process_data(data: str):
     """第二个函数：简单的数据处理函数"""
