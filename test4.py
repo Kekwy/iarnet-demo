@@ -33,6 +33,8 @@ lora_path = "/home/spark4862/Documents/projects/go/ignis/clients/demo/lora_adapt
 tokenizer = AutoTokenizer.from_pretrained("Qwen/Qwen3-0.6B", use_fast=False, trust_remote_code=True)
 tokenizer.padding_side = 'left'
 
+os.environ['HF_ENDPOINT'] = 'https://hf-mirror.com'
+
 @function(
     wrapper=ActorFunction,
     dependency=[],
@@ -260,11 +262,11 @@ def actorWorkflowExportFunc(dict: dict):
 
 workflow_func = workflowfunc.export(actorWorkflowExportFunc)
 print("----first execute----")
-data_dir = "/home/spark4862/Documents/projects/go/ignis/clients/demo/datasets/"
+data_dir = "./datasets/"
 
-predict("/home/spark4862/Documents/projects/go/ignis/clients/demo/datasets/medical41.jsonl")
+# predict("./datasets/medical41.jsonl")
 
 for file in os.listdir(data_dir):
     workflow_func({"path": os.path.join(data_dir, file)})
 
-predict("/home/spark4862/Documents/projects/go/ignis/clients/demo/datasets/medical41.jsonl")
+# predict("./datasets/medical41.jsonl")
