@@ -32,7 +32,7 @@ def hello_function(name: str):
     name="process_data",
     venv="test2",
     resources= {
-        "cpu": 1,
+        "cpu": 1000, # millicores
         "memory": "1024Mi",
         "gpu": 0,
     },
