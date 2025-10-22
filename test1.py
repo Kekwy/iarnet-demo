@@ -15,10 +15,15 @@ context = ActorContext.createContext()
 
 @function(
     wrapper=ActorFunction,
-    dependency=["pandas"],
+    dependency=[],
     provider="actor",
     name="hello_function",
     venv="test2",
+        resources= {
+        "cpu": 1000, # millicores
+        "memory": "1024Mi",
+        "gpu": 0,
+    },
 )
 def hello_function(name: str):
     """第一个函数：简单的问候函数"""
@@ -40,8 +45,6 @@ def hello_function(name: str):
 def process_data(data: str):
     """第二个函数：简单的数据处理函数"""
     processed = data.upper() + " - PROCESSED"
-    return processed
-
 
 @workflow(executor=ActorExecutor)
 def simple_workflow(wf: Workflow):
@@ -66,7 +69,7 @@ def actorWorkflowExportFunc(dict: dict):
     for function in route.functions:
         route_dict[function.name] = function.handler
     for workflow in route.workflows:
-        route_dict[workflow.name] = function.handler
+        route_dict[workflow.name] = workflow._generate_workflow
         
     metadata = Metadata(
         id=str(uuid.uuid4()),
