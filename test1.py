@@ -15,7 +15,7 @@ context = ActorContext.createContext()
 
 @function(
     wrapper=ActorFunction,
-    dependency=[],
+    dependency=["pandas"],
     provider="actor",
     name="hello_function",
     venv="test2",
