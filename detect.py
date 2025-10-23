@@ -1,4 +1,5 @@
 import os
+import resource
 import sys
 import time
 from typing import Iterable
@@ -128,6 +129,10 @@ context = ActorContext.createContext()
     provider="actor",
     name="read_image",
     venv="test2",
+    resources={
+        "cpu": 6000,
+        "memory": "4Gi",
+    },
 )
 def read_image(path: str):
     im = cv2.imread(path)
@@ -140,6 +145,10 @@ def read_image(path: str):
     provider="actor",
     name="inference",
     venv="test2",
+    resources={
+        "cpu": 1000,
+        "memory": "1Gi",
+    },
     replicas=3,
 )
 def inference(im: np.ndarray):
@@ -157,6 +166,10 @@ def inference(im: np.ndarray):
     provider="actor",
     name="paint",
     venv="test2",
+    resources={
+        "cpu": 1000,
+        "memory": "1Gi",
+    },
 )
 def paint(image: np.ndarray, result: dict):
     for box, label, score in zip(result["boxes"], result["labels"], result["scores"]):

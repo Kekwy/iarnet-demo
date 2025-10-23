@@ -41,10 +41,13 @@ def hello_function(name: str):
         "memory": "1024Mi",
         "gpu": 0,
     },
+    replicas=3,
 )
 def process_data(data: str):
     """第二个函数：简单的数据处理函数"""
     processed = data.upper() + " - PROCESSED"
+    return processed
+
 
 @workflow(executor=ActorExecutor)
 def simple_workflow(wf: Workflow):
