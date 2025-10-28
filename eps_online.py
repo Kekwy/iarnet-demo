@@ -15,7 +15,7 @@ from datetime import datetime, timedelta
 # from river import datasets
 from river import linear_model, preprocessing, compose, metrics
 
-context = ActorContext.createContext("127.0.0.1:8082")
+context = ActorContext.createContext()
 
 
 # todo: 模型对比
