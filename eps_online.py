@@ -1,7 +1,7 @@
 from lucas import workflow, function, Workflow
 from lucas.serverless_function import Metadata
 
-from actorc.controller.context import (
+from lucas.actorc.actor import (
     ActorContext,
     ActorFunction,
     ActorExecutor,
@@ -27,11 +27,9 @@ context = ActorContext.createContext()
     provider="actor",
     name="simulate_data",
     venv="test2",
-    resources= {
-        "cpu": 1000, # millicores
-        "memory": "1Gi",
-        "gpu": 0,
-    },
+    cpu=1000,
+    memory="1Gi",
+    gpu=0,
 )
 def simulate_data(_in):
     """
@@ -94,11 +92,9 @@ def simulate_data(_in):
     provider="actor",
     name="evaluate_data",
     venv="test2",
-    resources= {
-        "cpu": 1000, # millicores
-        "memory": "1Gi",
-        "gpu": 0,
-    },
+    cpu=1000,
+    memory="1Gi",
+    gpu=0,
 )
 def evaluate_data(dataset):
     model = compose.Pipeline(
@@ -141,11 +137,9 @@ def evaluate_data(dataset):
     provider="actor",
     name="store_data",
     venv="test2",
-    resources= {
-        "cpu": 1000, # millicores
-        "memory": "1Gi",
-        "gpu": 0,
-    },
+    cpu=1000,
+    memory="1Gi",
+    gpu=0,
 )
 def store_data(metrics, storage_path):
     print(metrics, file=sys.stderr)
@@ -193,6 +187,6 @@ def actorWorkflowExportFunc(dict: dict):
 
 
 workflow_func = workflowfunc.export(actorWorkflowExportFunc)
-workflow_func(
-    {"storage_path": "/home/xhy/iarnet/ignis/result.log"}
-)
+print(workflow_func(
+    {"storage_path": "./result.log"}
+))

@@ -1,0 +1,112 @@
+[
+  {
+    "id": "944d5418-378c-4b22-ba63-2587a6bb80ee",
+    "done": true,
+    "type": "ControlNode",
+    "functionname": "simulate_data",
+    "params": {
+      "086aad74-050d-4e2d-bed1-a8707e68210d": "_in"
+    },
+    "current": 4,
+    "data_node": "095b40d5-6dec-48a4-b91a-b63cc591575e",
+    "pre_data_nodes": [
+      "b2cb10d2-aede-4826-9601-64c5aeccc3d4"
+    ],
+    "functiontype": "remote"
+  },
+  {
+    "id": "b2cb10d2-aede-4826-9601-64c5aeccc3d4",
+    "done": true,
+    "type": "DataNode",
+    "lambda": "086aad74-050d-4e2d-bed1-a8707e68210d",
+    "ready": true,
+    "suf_control_nodes": [
+      "944d5418-378c-4b22-ba63-2587a6bb80ee"
+    ],
+    "pre_control_node": null,
+    "parent_node": null,
+    "child_node": []
+  },
+  {
+    "id": "095b40d5-6dec-48a4-b91a-b63cc591575e",
+    "done": true,
+    "type": "DataNode",
+    "lambda": "03764e0e-56e5-4800-912b-dcfcc185fdf3",
+    "ready": true,
+    "suf_control_nodes": [
+      "906e5e04-226c-4d89-9085-28d9c6d21114"
+    ],
+    "pre_control_node": "944d5418-378c-4b22-ba63-2587a6bb80ee",
+    "parent_node": null,
+    "child_node": []
+  },
+  {
+    "id": "906e5e04-226c-4d89-9085-28d9c6d21114",
+    "done": true,
+    "type": "ControlNode",
+    "functionname": "evaluate_data",
+    "params": {
+      "03764e0e-56e5-4800-912b-dcfcc185fdf3": "dataset"
+    },
+    "current": 4,
+    "data_node": "e2ccd840-0781-4adc-93cb-cab9af9b69d9",
+    "pre_data_nodes": [
+      "095b40d5-6dec-48a4-b91a-b63cc591575e"
+    ],
+    "functiontype": "remote"
+  },
+  {
+    "id": "e2ccd840-0781-4adc-93cb-cab9af9b69d9",
+    "done": true,
+    "type": "DataNode",
+    "lambda": "4669ff22-9b70-4a2b-8974-228f5ec5931c",
+    "ready": true,
+    "suf_control_nodes": [
+      "bbd39b2e-790b-4a9c-8323-5dd6412e9ff8"
+    ],
+    "pre_control_node": "906e5e04-226c-4d89-9085-28d9c6d21114",
+    "parent_node": null,
+    "child_node": []
+  },
+  {
+    "id": "bbd39b2e-790b-4a9c-8323-5dd6412e9ff8",
+    "done": true,
+    "type": "ControlNode",
+    "functionname": "store_data",
+    "params": {
+      "4669ff22-9b70-4a2b-8974-228f5ec5931c": "metrics",
+      "a8d3d545-574e-44c4-827d-0107116a1da6": "storage_path"
+    },
+    "current": 5,
+    "data_node": "701f38fa-0249-4501-abe1-cc29d9622d70",
+    "pre_data_nodes": [
+      "e2ccd840-0781-4adc-93cb-cab9af9b69d9",
+      "d377e449-a0b1-430f-9beb-3200aeee3025"
+    ],
+    "functiontype": "remote"
+  },
+  {
+    "id": "d377e449-a0b1-430f-9beb-3200aeee3025",
+    "done": true,
+    "type": "DataNode",
+    "lambda": "a8d3d545-574e-44c4-827d-0107116a1da6",
+    "ready": true,
+    "suf_control_nodes": [
+      "bbd39b2e-790b-4a9c-8323-5dd6412e9ff8"
+    ],
+    "pre_control_node": null,
+    "parent_node": null,
+    "child_node": []
+  },
+  {
+    "id": "701f38fa-0249-4501-abe1-cc29d9622d70",
+    "done": true,
+    "type": "DataNode",
+    "lambda": "6230c173-710b-40df-930a-7ea88eebc2d6",
+    "ready": true,
+    "suf_control_nodes": [],
+    "pre_control_node": "bbd39b2e-790b-4a9c-8323-5dd6412e9ff8",
+    "parent_node": null,
+    "child_node": []
+  }
+]
