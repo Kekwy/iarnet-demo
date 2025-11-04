@@ -2,7 +2,7 @@ import os
 import uuid
 from lucas import workflow, function, Workflow
 from lucas.serverless_function import Metadata
-from actorc.controller.context import (
+from lucas.actorc.actor import (
     ActorContext,
     ActorFunction,
     ActorExecutor,
@@ -19,11 +19,9 @@ context = ActorContext.createContext()
     provider="actor",
     name="hello_function",
     venv="test2",
-        resources= {
-        "cpu": 1000, # millicores
-        "memory": "1024Mi",
-        "gpu": 0,
-    },
+    cpu=1000, # millicores
+    memory="1024Mi",
+    gpu=0,
 )
 def hello_function(name: str):
     """第一个函数：简单的问候函数"""
