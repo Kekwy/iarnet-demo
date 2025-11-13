@@ -1,111 +1,68 @@
 [
   {
-    "id": "ae883b65-3b47-4db3-be35-4a7f47072e8b",
+    "id": "a28330c1-f327-4dd9-b3a5-465a4201b678",
     "done": true,
     "type": "ControlNode",
-    "functionname": "simulate_data",
+    "functionname": "hello_function",
     "params": {
-      "a48afb14-c5c7-43fe-aca9-4d77e0dfcafb": "_in"
+      "f9fee8f2-bf00-4496-abef-8ac6a09d7938": "name"
     },
-    "current": 4,
-    "data_node": "90d12883-9eaa-4f38-b466-27f3397be82c",
+    "current": 3,
+    "data_node": "f2a500fb-a8b7-4ec4-a95d-48a32d43de0a",
     "pre_data_nodes": [
-      "3eb0e3ab-eaae-4540-b9c1-05e7cb111e2c"
+      "2e030c2e-e75a-46c2-925f-4030dbad1f5b"
     ],
     "functiontype": "remote"
   },
   {
-    "id": "3eb0e3ab-eaae-4540-b9c1-05e7cb111e2c",
+    "id": "2e030c2e-e75a-46c2-925f-4030dbad1f5b",
     "done": true,
     "type": "DataNode",
-    "lambda": "a48afb14-c5c7-43fe-aca9-4d77e0dfcafb",
+    "lambda": "f9fee8f2-bf00-4496-abef-8ac6a09d7938",
     "ready": true,
     "suf_control_nodes": [
-      "ae883b65-3b47-4db3-be35-4a7f47072e8b"
+      "a28330c1-f327-4dd9-b3a5-465a4201b678"
     ],
     "pre_control_node": null,
     "parent_node": null,
     "child_node": []
   },
   {
-    "id": "90d12883-9eaa-4f38-b466-27f3397be82c",
+    "id": "f2a500fb-a8b7-4ec4-a95d-48a32d43de0a",
     "done": true,
     "type": "DataNode",
-    "lambda": "500e9302-725b-412b-a0f4-98e4ea79e7fb",
+    "lambda": "e201400f-a194-4b10-ad88-a656a1941edf",
     "ready": true,
     "suf_control_nodes": [
-      "8ef6e59f-350f-415d-9e8e-bff9fc9c6d74"
+      "ba16673e-8cf7-4dbb-9846-7ca2eddc3905"
     ],
-    "pre_control_node": "ae883b65-3b47-4db3-be35-4a7f47072e8b",
+    "pre_control_node": "a28330c1-f327-4dd9-b3a5-465a4201b678",
     "parent_node": null,
     "child_node": []
   },
   {
-    "id": "8ef6e59f-350f-415d-9e8e-bff9fc9c6d74",
+    "id": "ba16673e-8cf7-4dbb-9846-7ca2eddc3905",
     "done": true,
     "type": "ControlNode",
-    "functionname": "evaluate_data",
+    "functionname": "process_data",
     "params": {
-      "500e9302-725b-412b-a0f4-98e4ea79e7fb": "dataset"
+      "e201400f-a194-4b10-ad88-a656a1941edf": "data"
     },
     "current": 4,
-    "data_node": "f813ceea-97a3-4ecf-b705-ba0383b805f3",
+    "data_node": "20330a9b-cf7d-4253-ba1e-62e7742d19f3",
     "pre_data_nodes": [
-      "90d12883-9eaa-4f38-b466-27f3397be82c"
+      "f2a500fb-a8b7-4ec4-a95d-48a32d43de0a"
     ],
     "functiontype": "remote"
   },
   {
-    "id": "f813ceea-97a3-4ecf-b705-ba0383b805f3",
+    "id": "20330a9b-cf7d-4253-ba1e-62e7742d19f3",
     "done": true,
     "type": "DataNode",
-    "lambda": "4002c502-7f2a-4ac0-a4f2-09e29f281aa6",
-    "ready": true,
-    "suf_control_nodes": [
-      "88fd8986-d0da-4f0d-b57d-cb5ee0903fb7"
-    ],
-    "pre_control_node": "8ef6e59f-350f-415d-9e8e-bff9fc9c6d74",
-    "parent_node": null,
-    "child_node": []
-  },
-  {
-    "id": "88fd8986-d0da-4f0d-b57d-cb5ee0903fb7",
-    "done": true,
-    "type": "ControlNode",
-    "functionname": "store_data",
-    "params": {
-      "4002c502-7f2a-4ac0-a4f2-09e29f281aa6": "metrics",
-      "fdb7a535-2d0b-4d37-a18c-c75499843e81": "storage_path"
-    },
-    "current": 5,
-    "data_node": "3092ef46-faf9-4ce1-bdd8-164c353a2ac8",
-    "pre_data_nodes": [
-      "f813ceea-97a3-4ecf-b705-ba0383b805f3",
-      "230524be-f6b2-4c53-b11f-499b83a1ad5e"
-    ],
-    "functiontype": "remote"
-  },
-  {
-    "id": "230524be-f6b2-4c53-b11f-499b83a1ad5e",
-    "done": true,
-    "type": "DataNode",
-    "lambda": "fdb7a535-2d0b-4d37-a18c-c75499843e81",
-    "ready": true,
-    "suf_control_nodes": [
-      "88fd8986-d0da-4f0d-b57d-cb5ee0903fb7"
-    ],
-    "pre_control_node": null,
-    "parent_node": null,
-    "child_node": []
-  },
-  {
-    "id": "3092ef46-faf9-4ce1-bdd8-164c353a2ac8",
-    "done": true,
-    "type": "DataNode",
-    "lambda": "77da9c41-4ddc-4e22-a78e-65a566f63a18",
+    "lambda": "fe34e255-06ec-4def-9dc8-43de544f5313",
     "ready": true,
     "suf_control_nodes": [],
-    "pre_control_node": "88fd8986-d0da-4f0d-b57d-cb5ee0903fb7",
+    "pre_control_node": "ba16673e-8cf7-4dbb-9846-7ca2eddc3905",
     "parent_node": null,
     "child_node": []
   }

@@ -30,15 +30,13 @@ def hello_function(name: str):
 
 @function(
     wrapper=ActorFunction,
-    dependency=[],
+    dependency=["river"],
     provider="actor",
     name="process_data",
     venv="test2",
-    resources= {
-        "cpu": 1000, # millicores
-        "memory": "1024Mi",
-        "gpu": 0,
-    },
+    cpu=1000, # millicores
+    memory="1024Mi",
+    gpu=0,
     replicas=3,
 )
 def process_data(data: str):
