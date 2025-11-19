@@ -8,7 +8,7 @@ from lucas.actorc.actor import (
     ActorExecutor,
     ActorRuntime,
 )
-from lucas.utils.logging import log
+import time
 
 # 创建Actor上下文
 context = ActorContext.createContext()
@@ -26,6 +26,7 @@ context = ActorContext.createContext()
 )
 def hello_function(name: str):
     """第一个函数：简单的问候函数"""
+    time.sleep(30)
     return f"Hello, {name}! This is from Actor function."
 
 
@@ -43,6 +44,7 @@ def hello_function(name: str):
 def process_data(data: str):
     """第二个函数：简单的数据处理函数"""
     processed = data.upper() + " - PROCESSED"
+    time.sleep(30)
     return processed
 
 
@@ -91,6 +93,6 @@ demo_workflow = simple_workflow.export(actorWorkflowExportFunc)
 
 # 执行示例
 if __name__ == "__main__":
-    log.info("执行简单的两函数demo:")
+    print("执行简单的两函数demo:")
     result = demo_workflow({"name": "World"})
-    log.info(f"工作流结果: {result}")
+    print(f"工作流结果: {result}")
