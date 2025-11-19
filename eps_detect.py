@@ -86,7 +86,7 @@ def load_helmet_model():
 
 model = load_helmet_model()
 
-context = ActorContext.createContext("localhost:8082")
+context = ActorContext.createContext()
 
 
 @function(
